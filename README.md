@@ -1,4 +1,4 @@
-### Project deployed at https://getufit.vercel.app
+### Project deployed at [https://getufit.vercel.app](https://getufit-58742455872.us-central1.run.app)
 
 # Project Setup
 
