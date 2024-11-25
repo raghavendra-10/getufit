@@ -1,3 +1,5 @@
+### Project deployed at https://getufit.vercel.app
+
 # Project Setup
 
 This repository contains the following components:
