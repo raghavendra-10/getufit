@@ -42,11 +42,11 @@ const Onboarding = () => {
   };
 
   return (
-    <div className=" max-h-[750px] bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg">
-        <ToastContainer />
-        {/* <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-blue-600">Fitness Onboarding</h1> */}
-        <form onSubmit={handleSubmit} className="space-y-2  h-[700px]">
+    <div className="min-h-screen bg-slate-100 pb-32 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+      <ToastContainer />
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-8 text-center text-blue-800">Get<span className='text-orange-400'>U</span>Fit</h1>
+      <form onSubmit={handleSubmit} className="w-full max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* User ID */}
           <div>
             <label className="block text-sm font-medium text-gray-900">User ID</label>
@@ -56,7 +56,7 @@ const Onboarding = () => {
               placeholder="Enter User ID"
               value={formData.user_id}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -70,7 +70,7 @@ const Onboarding = () => {
               placeholder="Enter Name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -84,7 +84,7 @@ const Onboarding = () => {
               placeholder="Enter Age"
               value={formData.age}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -98,7 +98,7 @@ const Onboarding = () => {
               placeholder="e.g., 5.9"
               value={formData.height}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -112,7 +112,7 @@ const Onboarding = () => {
               placeholder="e.g., 160"
               value={formData.weight}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             />
           </div>
@@ -124,7 +124,7 @@ const Onboarding = () => {
               name="goal"
               value={formData.goal}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             >
               <option value="">Select Fitness Goal</option>
@@ -144,7 +144,7 @@ const Onboarding = () => {
               placeholder="e.g., none"
               value={formData.health_issues}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
@@ -155,7 +155,7 @@ const Onboarding = () => {
               name="experience"
               value={formData.experience}
               onChange={handleChange}
-              className="mt-1 w-full p-2 sm:p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
               required
             >
               <option value="">Select Experience Level</option>
@@ -164,17 +164,19 @@ const Onboarding = () => {
               <option value="advanced">Advanced</option>
             </select>
           </div>
+        </div>
 
-          {/* Submit Button */}
+        {/* Submit Button */}
+        <div className="mt-8">
           <button
             type="submit"
-            className={`w-full py-2 sm:py-3 text-white font-semibold rounded-lg ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'}`}
+            className={`w-full py-3 text-white font-semibold rounded-lg ${loading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'}`}
             disabled={loading}
           >
             {loading ? 'Submitting...' : 'Submit'}
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };

@@ -58,8 +58,8 @@ const Activities = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           patient_id: user.user_data.user_id,
-          documents: [{ text: data }]
-        })
+          documents: [{ text: data }],
+        }),
       });
 
       if (!response.ok) {
@@ -72,61 +72,70 @@ const Activities = () => {
     }
   };
 
-
   return (
-    <div className="min-h-screen text-black  p-6">
+    <div className="min-h-screen pb-32 bg-slate-100 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       <ToastContainer />
-      <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Your Weekly Fitness Plan</h1>
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-8 text-center text-blue-800">
+        Get<span className="text-orange-400">U</span>Fit
+      </h1>
 
       {loading ? (
         <div className="flex justify-center items-center min-h-[50vh]">
-          <div className="spinner-border  animate-spin inline-block w-8 h-8 border-4 rounded-full" />
+          <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" />
         </div>
       ) : activities.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activities.map((activity, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between"
-            >
-              <h2 className="text-xl font-bold text-blue-600">{activity.day}</h2>
-              <p className="mt-2">
-                <span className="font-semibold">Focus:</span> {activity.focus}
-              </p>
-              {activity.exercises && activity.exercises.length > 0 ? (
-                <div className="mt-2">
-                  <h3 className="font-semibold">Exercises:</h3>
-                  <ul className="list-disc list-inside">
-                    {activity.exercises.map((exercise, idx) => (
-                      <li key={idx}>
-                        <strong>{exercise.name}</strong> - {exercise.sets} sets of {exercise.reps} reps (Rest: {exercise.rest}s)
-                        {exercise.notes && <p className="text-sm text-gray-600">Notes: {exercise.notes}</p>}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <p className="mt-2 text-gray-600">No exercises for this day.</p>
-              )}
+        <div className="w-full max-w-7xl">
+          <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">Your Weekly Fitness Plan</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activities.map((activity, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between"
+              >
+                <h3 className="text-2xl font-bold text-blue-600">{activity.day}</h3>
+                <p className="mt-2">
+                  <span className="font-semibold">Focus:</span> {activity.focus}
+                </p>
+                {activity.exercises && activity.exercises.length > 0 ? (
+                  <div className="mt-4">
+                    <h4 className="font-semibold text-lg">Exercises:</h4>
+                    <ul className="list-disc list-inside mt-2 space-y-2">
+                      {activity.exercises.map((exercise, idx) => (
+                        <li key={idx}>
+                          <p>
+                            <strong>{exercise.name}</strong> - {exercise.sets} sets of {exercise.reps} reps
+                            (Rest: {exercise.rest}s)
+                          </p>
+                          {exercise.notes && (
+                            <p className="text-sm text-gray-600 mt-1">Notes: {exercise.notes}</p>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <p className="mt-2 text-gray-600">No exercises for this day.</p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {fitnessPlan.nutrition && (
+            <div className="mt-8 bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-2xl font-bold text-blue-600 mb-4">Additional Recommendations</h2>
+              <div className="mt-2">
+                <h3 className="font-semibold text-lg">Fitness Goal:</h3>
+                <p>{fitnessPlan.fitness_goal}</p>
+              </div>
+              <div className="mt-4">
+                <h3 className="font-semibold text-lg">Nutrition:</h3>
+                <p>{fitnessPlan.nutrition}</p>
+              </div>
             </div>
-          ))}
+          )}
         </div>
       ) : (
         <p className="text-center text-gray-600">No activities available. Please try again later.</p>
-      )}
-
-      {!loading && fitnessPlan.nutrition && (
-        <div className="mt-8 bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-blue-600 mb-4">Additional Recommendations</h2>
-          <div className="mt-2">
-            <h3 className="font-semibold text-lg">Fitness Goal:</h3>
-            <p>{fitnessPlan.fitness_goal}</p>
-          </div>
-          <div className="mt-2">
-            <h3 className="font-semibold text-lg">Nutrition:</h3>
-            <p>{fitnessPlan.nutrition}</p>
-          </div>
-        </div>
       )}
     </div>
   );

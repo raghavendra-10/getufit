@@ -28,7 +28,7 @@ const Files = () => {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to fetch the file');
+          throw new Error('No chat history is found');
         }
 
         const data = await response.json();
@@ -46,28 +46,35 @@ const Files = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r  p-6">
+    <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       <ToastContainer />
-      <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Files</h1>
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-8 text-center text-blue-800">
+        Get<span className="text-orange-400">U</span>Fit
+      </h1>
 
-      {loading ? (
-        <div className="flex justify-center items-center min-h-[50vh]">
-          <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" />
-        </div>
-      ) : fileUrl ? (
-        <div className="flex justify-center">
-          <a
-            href={fileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline text-lg"
-          >
-            Download chat histrory
-          </a>
-        </div>
-      ) : (
-        <p className="text-center text-gray-600">No file available. Please try again later.</p>
-      )}
+      <div className="w-full max-w-md">
+        <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">Your Files</h2>
+
+        {loading ? (
+          <div className="flex justify-center items-center min-h-[50vh]">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600"></div>
+          </div>
+        ) : fileUrl ? (
+          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
+            <p className="text-lg text-gray-800 mb-4">Your chat history is ready to download:</p>
+            <a
+              href={fileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg"
+            >
+              Download Chat History
+            </a>
+          </div>
+        ) : (
+          <p className="text-center text-gray-600">No file available. Please try again later.</p>
+        )}
+      </div>
     </div>
   );
 };
