@@ -45,6 +45,9 @@ The architecture leverages the following GCP services:
 3. Fitness activities and recommendations are generated using Gemini 1.5 Pro.
 4. The RAG model retrieves user-specific records and provides responses using Text Embedding Gecko and Gemini Flash.
 5. Users can download personalized plans and chat history.
+![user details](https://github.com/user-attachments/assets/6cf94bc6-15ab-4e0c-a746-ed57bd2f3ec9)
+
+   
 
 ---
 
