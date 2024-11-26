@@ -51,6 +51,35 @@ The architecture leverages the following GCP services:
 
 ---
 
+### 3. Frontend (GetUFitV1 - Next.js)
+
+The frontend is built using Next.js, a powerful React framework for building fast, interactive web applications. This provides an intuitive interface for users to interact with the chatbot, input their health data, and access personalized fitness plans.
+
+#### Key Features of the Frontend:
+1. **User-Friendly Onboarding**:
+   - Simple interface to collect user demographic details (name, age, weight, height, fitness goals, etc.).
+   - Inputs are validated before being sent to the backend for processing.
+2. **Real-Time Chat with the Fitness Bot**:
+   - Chat with the bot to get personalized fitness and nutrition advice.
+   - Frontend sends queries to the backend and displays AI-generated responses.
+3. **Personalized Fitness Dashboard**:
+   - Displays a summary of user data with tailored fitness insights.
+   - Provides fitness plans and generated wellness recommendations.
+4. **File Download Functionality**:
+   - Allows users to download chat history and wellness plans as PDF files.
+5. **Mobile-First Design**:
+   - Optimized for both desktop and mobile devices to ensure a seamless experience.
+  
+
+## Acknowledgments
+
+I would like to thank my mentor **Mr. Mahesh Mohan** (boggavarapumohanmahesh@gmail.com) for guiding me in building this project end-to-end.
+
+To learn more about Google Cloud Services and create an impact with your work:
+- Register for **Code Vipassana** sessions : https://rsvp.withgoogle.com/events/cv
+- Join the **Datapreneur Social** meetup group. : https://www.meetup.com/datapreneur-social/
+- Sign up to become a **Google Cloud Innovator**. : https://cloud.google.com/innovators
+
 ## Project Setup
 
 This repository contains the following components:
