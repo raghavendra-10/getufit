@@ -38,6 +38,7 @@ The architecture leverages the following GCP services:
 - **BigQuery**: For analyzing and retrieving user-specific health insights.
 - **Vertex AI**: For embedding generation and AI-powered fitness recommendations.
 - **Google Cloud Storage (GCS)**: For storing downloadable files like PDFs.
+- **Cloud Run**: For deploying the backend .
 
 ### Workflow:
 1. Users input their demographic details and fitness queries.
