@@ -23,7 +23,7 @@ const BottomBar = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white shadow-lg border-t border-gray-200">
+    <div className=" w-full bg-white shadow-lg border-t border-gray-200">
       <div className="max-w-7xl  mx-auto p-4 flex justify-center space-x-10">
         {/* Chat Icon */}
         <button

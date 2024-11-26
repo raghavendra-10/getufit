@@ -74,7 +74,7 @@ const ChatPage = () => {
                 </h1>
             </header>
 
-            <div className="w-full md:pb-24 max-w-4xl bg-white shadow-lg rounded-lg flex flex-col h-[700px]">
+            <div className="w-full pb-24 max-w-4xl bg-white shadow-lg rounded-lg flex flex-col h-[700px]">
                 <h2 className="text-3xl font-bold text-center text-blue-600 py-4 border-b border-gray-200">
                     Chat with Your Fitness Bot
                 </h2>

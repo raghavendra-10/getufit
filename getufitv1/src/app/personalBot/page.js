@@ -142,7 +142,7 @@ const PersonalBot = () => {
         </h1>
       </header>
 
-      <div className="w-full md:pb-24 max-w-4xl bg-white shadow-lg rounded-lg flex flex-col h-[700px]">
+      <div className="w-full pb-24 max-w-4xl bg-white shadow-lg rounded-lg flex flex-col h-[700px]">
         {/* Chat Header */}
         <h2 className="text-3xl font-bold text-center text-blue-600 py-4 border-b border-gray-200">
           Personal Chatbot <span className='text-sm text-black'>based on your own data</span>

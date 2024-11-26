@@ -44,15 +44,19 @@ def call_gemini_api(query):
 
     
     base_prompt = (
-        "You are a chatbot specialized in fitness, nutritionist and health wellness. "
+        "You are a chatbot specialized in fitness, nutrition, and health wellness. "
         "You provide advice strictly related to fitness, nutrition, exercise routines, and wellness plans. "
         "Avoid any topics unrelated to fitness and health. "
         "If the user asks anything outside these topics, politely decline and redirect them to fitness-related inquiries.\n\n"
+        "User query: {query}\n\n"
     )
-    query = "{query}"+ base_prompt 
-    # Generate response
+
+# Inject the user query into the base_prompt
+    formatted_query = base_prompt.format(query=query)  # Ensure 'user_query' contains the actual user input
+
+# Generate response
     response = model.generate_content(
-        [query],  # Pass the user query as a list of strings
+        [formatted_query], 
         generation_config=generation_config,
         stream=False,  # Disable streaming for simplicity
     )

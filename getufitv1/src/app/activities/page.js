@@ -81,7 +81,7 @@ const Activities = () => {
 
       {loading ? (
         <div className="flex justify-center items-center min-h-[50vh]">
-          <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" />
+          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600"></div>
         </div>
       ) : activities.length > 0 ? (
         <div className="w-full max-w-7xl">
