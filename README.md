@@ -70,11 +70,14 @@ The backend is built using Flask and serves as the core API layer. It requires t
    python app.py
 
 
-## Output![Screenshot 2024-11-26 075025](https://github.com/user-attachments/assets/a618ba7c-509c-4a25-9cbe-6affbaebb867)
-![Screenshot ![Screenshot 2024-11-26 075153]![Screenshot 2024-11-26 075214](https://github.com/user-attachments/assets/b85fc1fc-6eca-4eb6-a413-aee5a68f353e)
-(https://github.com/user-attachments/assets/7455556d-ee4a-4864-a848-d5ec41d1a5a1)
-2024-11-26 075140](https://github.com/user-a![Screenshot 2024-11-26 075228](https://github.com/user-attachments/assets/8f8c7d38-87d1-433d-9d8a-4c78ad55d65e)
-ttachments/assets/2fc3e0f7-1746-48f6-9eb3-0b2eb6c836a2)
-![Screenshot 2024-11-26 075248](https://github.com/user-attachments/assets/bbe4b11b-deea-44cd-88b7-d758943c5f55)
+## Output
+
+![Screenshot 2024-11-26 075025](https://github.com/user-attachments/assets/fb574d6a-059d-4412-933e-bff64fc8a6cb)
+![Screenshot 2024-11-26 075140](https://github.com/user-attachments/assets/3dd27ac4-9771-4879-baf2-27b432bf88b4)
+![Screenshot 2024-11-26 075153](https://github.com/user-attachments/assets/f6473254-87a6-4490-a661-91a0944b4b22)
+![Screenshot 2024-11-26 075214](https://github.com/user-attachments/assets/b46ec7e5-df74-4489-a58f-a53ec5afa360)
+![Screenshot 2024-11-26 075228](https://github.com/user-attachments/assets/49edb42e-584f-4776-b6d5-b2263cd84783)
+![Screenshot 2024-11-26 075248](https://github.com/user-attachments/assets/f5170687-3982-4eb7-b407-53eb0af5124f)
+
 
 
